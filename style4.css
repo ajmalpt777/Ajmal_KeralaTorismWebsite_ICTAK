@@ -1,0 +1,73 @@
+.container{
+    margin-top: 3%;
+    margin-left: 2%;
+    
+}
+.dist-mar{
+    position: relative;
+    border: 1px solid white;
+    width: 23%;
+    float: left;
+    margin-left: 20px;
+    height: 20em;
+    padding: 5px;
+    margin-top: 5px;
+    background-color:transparent;
+}
+.image{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    background-color: #008CBA;
+  }
+  
+  .dist-mar:hover .overlay {
+    opacity: 0.5;
+
+  }
+  
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+#dist-mar1{
+    border: 1px solid white;
+    width: 22%;
+    float: left;
+    margin-left: 20px;
+    height: 15em;
+    padding: 5px;
+    background-color:white;}
+.dist-mar p{
+    line-height: 1.25em;
+    text-align:justify;
+}
+.dist-mar h3{
+    text-align: center;
+}
+.footer{
+    background-color: black;
+    color: white;
+    height: 1.5em;
+    margin-top: 100%;
+}
+.footer h3{
+    text-align: justify;}

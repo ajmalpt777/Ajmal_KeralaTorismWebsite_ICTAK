@@ -1,0 +1,15 @@
+*{ 
+    padding: 0em;
+    margin: 0em;
+ }
+ .myMargin{
+     width: 100%;
+     height:70%;
+ }
+ #navbarNav
+ {
+     float: right;
+ }
+ .form-inline{
+     float:right;
+ }

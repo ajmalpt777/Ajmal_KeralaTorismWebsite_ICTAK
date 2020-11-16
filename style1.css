@@ -1,0 +1,32 @@
+.login{
+    float: right;
+    border:1px solid red;
+    background-color: beige;
+    height: 20em;
+    margin-top: 5%;
+    margin-right: 45%;
+    padding: 30px;
+}
+.login h2{
+    text-align: center;
+}
+.login input{
+    height: 1.5em;
+}
+.login #submit{
+    width: 100%;
+    height: 1.8em;
+    color: white;
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+}
+.footer{
+    background-color: black;
+    color: white;
+    height: 1.5em;
+    margin-top: 29%;
+    
+    }
+.footer h3{
+    text-align: center;
+}    

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./style3.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <a class="navbar-brand" href="#">
+          <img src="./images/k5.png" width="80" height="50" alt="" loading="lazy">
+        </a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
+          <!-- <span class="navbar-toggler-icon"></span> -->
+        <!-- </button> -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="districts.html">Districts</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="signup.html">Sign Up</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="SignIn.html">Sign In <span class="sr-only">(current)</span></a>
+            </li>
+            
+          </ul>
+          </nav>
+
+        </div>
+      </nav>
+
+      <!-- <form action="#" class="login">
+        <h2>Sign UP</h2>
+        <br>
+        <div class="login-con">
+            <label >Email</label>
+            <br>
+            <input type="email" placeholder="Email">
+        </div>
+        <br>
+
+        <div class="login-con">
+            <label >Password</label>
+            <br>
+            <input type="password" placeholder="Password">
+        </div>
+        <br>
+        <div class="login-con">
+          <label >Address</label>
+          <br>
+          <input type="text" placeholder="Address">
+      </div>
+      <br>
+      <div class="login-con">
+        <label >City</label>
+        <br>
+        <input type="text" placeholder="City">
+    </div>
+    <br>
+    <div class="login-con">
+      <label >State</label>
+      <br>
+      <input type="text" placeholder="State">
+  </div>
+  <br>
+        <button id="login-button"> Sign UP</button>
+        <br>
+        <a href="SignIn.html">Sign In</a>
+    </form> -->
+
+
+    <form action="foundation.html"  class="login" id="form" onsubmit="return validate()">
+      <h2>Sign UP</h2>
+      <div class="login-con">
+          <label >Email</label>
+          <br>
+          <input type="email" placeholder="Email" id="email" >
+          <p id="emailErr"></p>
+      </div>
+
+      <div class="login-con">
+          <label >Phone Number</label>
+          <br>
+          <input type="text" placeholder="Phone Number" id="num"  >
+          <p id="numberErr"></p>
+      </div>
+      
+      <div class="login-con">
+          <label >Password</label>
+          <br>
+          <input type="password" placeholder="Password"  id="pwd1"  maxlength="100" onkeyup="return passwordChanged();">
+          <p id="passwordErr"></p>
+          <!-- <input name="password" id="password" type="password" size="15" maxlength="100" onkeyup="return passwordChanged();" /> -->
+          <p id="strength"></p>
+
+      </div>
+      <div class="login-con">
+          <label >Re-Enter Password</label>
+          <br>
+          <input type="text" placeholder="Password" id="pwd2"  >
+          <p id="password2Err"></p>
+      </div>
+      
+</div>
+      <button id="submit"> Sign UP</button>
+      <br>
+      <a href="SignIn.html">Sign In</a>
+  </form>
+  <script>
+
+
+     function printError(elemId, hintMsg,elemId2) {
+             document.getElementById(elemId).innerHTML = hintMsg;
+          // hintMsg.style.color="red"
+             elemId2.style.border="solid 2px red";
+       }
+       function printNError(elemId, hintMsg,elemId2) {
+             document.getElementById(elemId).innerHTML = hintMsg;
+             elemId2.style.border="solid 2px green";
+       }  
+    
+      
+       function validate(){
+          let emailV= document.getElementById("email");
+          let pwd1V=document.getElementById("pwd1");
+          let pwd2V=document.getElementById("pwd2");
+          let numV=document.getElementById("num");
+          // let regex=/^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(\.[a-z]{2,3})?$/
+          // let regex1=/^([0-9]{3})([\.-]{0,1})([0-9]{3})([\.-]{0,1})([0-9]{4})$/
+     var email=emailV.value.trim();  
+     var pwd1=pwd1V.value.trim();
+     var pwd2=pwd2V.value.trim();
+     var num=numV.value.trim();  
+     var emailErr = numberErr = passwordErr = password2Err = true;
+          
+      if(email == "") {
+      printError("emailErr", "Enter your email address",emailV);
+        } else {
+      // Regular expression for basic email validation
+        var regex=/^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(\.[a-z]{2,3})?$/
+      // var regex = /^\S+@\S+\.\S+$/;
+           if(regex.test(email) === false) {
+          printError("emailErr", "Enter a valid email address",emailV);
+         } else{
+          printNError("emailErr", "",emailV);
+          emailErr = false;
+        }
+       }
+
+
+
+       if(num == "") {
+      printError("numberErr", "Enter your mobile number",numV);
+      } else {
+      // var regex1 = /^[1-9]\d{9}$/;
+      var regex1 =/^\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})$/;
+      // var regex1=/^([0-9]{3})([\.-]{0,1})([0-9]{3})([\.-]{0,1})([0-9]{4})$/
+      if(regex1.test(num) === false) {
+          printError("numberErr", "Enter a valid 10 digit number",numV);
+      } else{
+          printNError("numberErr", "",numV);
+          numberErr = false;
+      }
+     }
+
+
+     
+
+
+  
+
+  if(pwd1 == "") {
+      printError("passwordErr", "Enter your password",pwd1V);
+  } else {
+      // var regex = /^[1-9]\d{9}$/;
+      var regex3= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+      if(regex3.test(pwd1) === false) {
+          printError("passwordErr", "Enter a password in format",pwd1V);
+          alert("Password Must Contain Minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number")
+      } else{
+          printNError("passwordErr", "",pwd1V);
+          passwordErr = false;
+      }
+    }
+
+
+
+     
+
+  if(pwd2 == "") {
+      printError("password2Err", "Enter your password again",pwd2V);
+  } else {
+      // var regex = /^[1-9]\d{9}$/;
+      if(pwd1 != pwd2) {
+          printError("password2Err", "Password doesnt match!!",pwd2V);
+      } else{
+          printNError("password2Err", "",pwd2V);
+          password2Err = false;
+      }
+  }
+
+
+
+
+  if((emailErr || numberErr || passwordErr || password2Err) == true) {
+      console.log(emailErr);
+      console.log(numberErr);
+      console.log(passwordErr);
+      console.log(password2Err);
+     return false;
+  } else {
+      // Creating a string from input data for preview
+      var dataPreview = "You've entered the following details: \n" +
+                        "Email Address: " + email + "\n" +
+                        "Mobile Number: " + num + "\n" ;
+     
+      // Display input data in a dialog box before submitting the form
+      alert(dataPreview);
+      
+  
+       }
+        }
+
+
+
+        function passwordChanged() {
+      var strength = document.getElementById('strength');
+      var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+      var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+      var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+      var pwd3 = document.getElementById("pwd1");
+      if (pwd3.value.length == 0) {
+          strength.innerHTML = '';
+      } else if (false == enoughRegex.test(pwd3.value)) {
+          strength.innerHTML = 'More Characters';
+      } else if (strongRegex.test(pwd3.value)) {
+          strength.innerHTML = '<p style="color:green">Strong!</p>';
+      } else if (mediumRegex.test(pwd3.value)) {
+          strength.innerHTML = '<p style="color:orange">Medium!</p>';
+      } else {
+          strength.innerHTML = '<p style="color:red">Weak!</p>';
+      }
+  }
+          
+      
+          
+             
+  </script>
+ 
+     
+     <!-- <footer> -->
+       <!-- <h3>Department of Tourism, Government of Kerala, Park View, Thiruvananthapuram, Kerala, India - 695 033 Phone: +91 471 2321132, Fax: +91 471 2322279, E-mail: info@keralatourism.org.</h3> -->
+     <!-- </footer> -->
+      
+</body>
+</html>

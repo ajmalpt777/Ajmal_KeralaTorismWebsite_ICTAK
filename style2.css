@@ -1,0 +1,76 @@
+.container{
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.dist-mar{
+    position: relative;
+    border: 3px solid white;
+    width: 22%;
+    float: left;
+    margin-left: 20px;
+    height: 23em;
+    padding: 5px;
+    background-color: white;
+}
+.image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    background-color:gray;
+  }
+  
+  .dist-mar:hover .overlay {
+    opacity: 1.0;
+
+  }
+  
+.text {
+    color:black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    -webkit-transform: translate(-50%, -50%);
+
+    text-align: justify;
+  }
+
+#dist-mar1{
+    border: 3px solid white;
+    width: 22%;
+    float: left;
+    margin-left: 20px;
+    height: 15em;
+    padding: 5px;
+    background-color:white;
+}
+.dist-mar p{
+    line-height: .75em;
+    text-align:justify;
+}
+.overlay a{
+    color: white;
+}
+.dist-mar h3{
+    text-align: center;
+}
+.footer{
+    background-color: black;
+    color: white;
+    height: 1.5em;
+    margin-top: 100%;
+}
+.footer h3{
+    text-align: justify;
+}
